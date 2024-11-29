@@ -4,7 +4,7 @@ from auth.models import db
 import os
 
 app = Flask(__name__)
-app.secret_key = "your_secret_key"
+app.secret_key = "fakerfivecup"
 
 # Cấu hình cơ sở dữ liệu
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
