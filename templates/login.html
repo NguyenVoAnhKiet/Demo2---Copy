@@ -30,20 +30,18 @@
         </div>
         {% endfor %}
       </div>
-      <!-- Clear the flashed messages after rendering -->
-      {% set messages = [] %}
       {% endif %}
       {% endwith %}
 
       <form action="/login" method="POST">
         <div class="input-group">
           <label for="username">Username</label>
-          <input type="text" id="username" name="username" placeholder="" required>
+          <input type="text" id="username" name="username" placeholder="" autocomplete=off required>
         </div>
         <div class="input-group">
           <label for="password">Password</label>
           <div class="password-field">
-            <input type="password" id="password" name="password" placeholder="********" required>
+            <input type="password" id="password" name="password" placeholder="********" autocomplete=off required>
             <img src="Image/eye-slash-fill.svg" alt="Toggle password visibility" class="toggle-password">
           </div>
         </div>

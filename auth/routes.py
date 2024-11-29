@@ -79,9 +79,13 @@ def signup():
 
 @auth.route("/logout")
 def logout():
-    session.pop("user_id", None)  # Xóa ID người dùng khỏi session
-    session.pop("username", None)  # Xóa tên người dùng khỏi session
-    # Xóa tất cả flash messages khỏi session
-    session.clear()
+    # Xóa toàn bộ dữ liệu trong session
+    session.clear()  # Xóa tên người dùng khỏi session
+
+    # Xóa cookie nếu có
+    resp = redirect(url_for("auth.login"))
+    resp.set_cookie("username", "", expires=0)
+    resp.set_cookie("password", "", expires=0)
+    # Xóa tất cả thông báo flash để tránh hiển thị lại
     flash("You have been logged out.", "info")
-    return redirect(url_for("auth.login"))
+    return resp  # Trả về response đã xóa cookie và redirect
