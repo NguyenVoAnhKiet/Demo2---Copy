@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
     <div class="container">
         <div class="left-section">
             <img src="Image/Register.jpg" alt="Illustration" class="mockup-image">
@@ -20,6 +21,18 @@
                 <p>Start your journey with us by setting up your account now!</p>
                 <!-- Định nghĩa method POST và action -->
                 <form class="signup-form" method="POST" action="{{ url_for('auth.signup') }}">
+                    <!-- Hiển thị thông báo flash nếu có -->
+                    {% with messages = get_flashed_messages(with_categories=True) %}
+                    {% if messages %}
+                    <div class="flash-messages">
+                        {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    {% endwith %}
                     <!-- Username Field -->
                     <div class="form-group">
                         <input type="text" name="username" placeholder="Username" required>
@@ -38,7 +51,7 @@
                         <input type="email" name="email" placeholder="Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" name="phonenumber" placeholder="Phone Number" required>
+                        <input type="tel" name="phonenumber" placeholder="Phone Number" pattern="[0-9]{10}" required>
                     </div>
                     <!-- Password Fields -->
                     <div class="form-group">

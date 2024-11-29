@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash, session
 from .models import db, User
 import re
+import hashlib
 
 # from flask_login import login_user
 auth = Blueprint("auth", __name__)
@@ -23,6 +24,11 @@ def is_valid_password(password):
     return False
 
 
+# Hàm băm mật khẩu bằng SHA-256
+def hash_password(password):
+    return hashlib.sha256(password.encode()).hexdigest()
+
+
 @auth.route("/login", methods=["GET", "POST"])
 def login():
     if request.method == "POST":
@@ -30,7 +36,7 @@ def login():
         password = request.form["password"]
 
         user = User.query.filter_by(username=username).first()
-        if user and user.password == password:
+        if user and user.password == hash_password(password):
             flash("Login successful!", "success")
             session["user_id"] = user.user_id
             session["username"] = user.username
@@ -62,11 +68,19 @@ def signup():
             flash("Username already exists.", "danger")
         elif User.query.filter_by(email=email).first():
             flash("Email already exists.", "danger")
+        # Kiểm tra số điện thoại: chỉ nhận số và đúng 10 ký tự
+        elif not phonenumber.isdigit() or len(phonenumber) != 10:
+            flash(
+                "Phone number must be 10 digits long and contain only numbers.",
+                "danger",
+            )
         else:
+            # Băm mật khẩu trước khi lưu
+            hashed_password = hash_password(password)
             new_user = User(
                 username=username,
                 email=email,
-                password=password,
+                password=hashed_password,
                 phonenumber=phonenumber,
                 gender=gender,
             )

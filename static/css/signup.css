@@ -170,3 +170,33 @@ select.gender-select:focus {
 .login-text a:hover {
     text-decoration: underline;
 }
+
+.flash-messages {
+    width: 100%;
+    /* Đảm bảo chiều rộng không quá lớn */
+    max-width: 400px;
+    /* Giới hạn chiều rộng tối đa */
+    margin: 10px auto;
+    /* Căn giữa thông báo */
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f8d7da;
+    /* Màu nền mặc định */
+    color: #721c24;
+    /* Màu chữ mặc định */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    /* Căn giữa chữ trong thông báo */
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
