@@ -18,15 +18,32 @@
       </div>
       <h2>Login</h2>
       <p>Login to access your travelwise account</p>
+
+      <!-- Display Flash Messages -->
+      {% with messages = get_flashed_messages(with_categories=True) %}
+      {% if messages %}
+      <div class="flash-messages">
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+          <!-- <img src="Image/alert-icon.svg" alt="Alert icon" class="alert-icon"> -->
+          {{ message }}
+        </div>
+        {% endfor %}
+      </div>
+      <!-- Clear the flashed messages after rendering -->
+      {% set messages = [] %}
+      {% endif %}
+      {% endwith %}
+
       <form action="/login" method="POST">
         <div class="input-group">
           <label for="username">Username</label>
-          <input type="text" id="username" name="username" placeholder="">
+          <input type="text" id="username" name="username" placeholder="" required>
         </div>
         <div class="input-group">
           <label for="password">Password</label>
           <div class="password-field">
-            <input type="password" id="password" name="password" placeholder="********">
+            <input type="password" id="password" name="password" placeholder="********" required>
             <img src="Image/eye-slash-fill.svg" alt="Toggle password visibility" class="toggle-password">
           </div>
         </div>

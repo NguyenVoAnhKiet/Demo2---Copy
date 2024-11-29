@@ -36,7 +36,9 @@ def login():
             session["username"] = user.username
             return redirect(url_for("home"))
         else:
-            flash("Invalid username or password.", "danger")
+            flash(
+                "Invalid username or password.", "danger"
+            )  # Kiểm tra xem phiên đã hết hạn chưa
     return render_template("login.html")
 
 
@@ -79,5 +81,7 @@ def signup():
 def logout():
     session.pop("user_id", None)  # Xóa ID người dùng khỏi session
     session.pop("username", None)  # Xóa tên người dùng khỏi session
+    # Xóa tất cả flash messages khỏi session
+    session.clear()
     flash("You have been logged out.", "info")
     return redirect(url_for("auth.login"))
