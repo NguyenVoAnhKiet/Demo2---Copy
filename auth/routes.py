@@ -47,7 +47,7 @@ def signup():
         email = request.form["email"]
         password = request.form["password"]
         phonenumber = request.form["phonenumber"]
-        gender = request.form["gender"]
+        gender = request.form["gender"].capitalize()
 
         if not is_valid_email(email):
             flash("Invalid email format.", "danger")

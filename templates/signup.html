@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
-
 </head>
 
 <body>
@@ -19,33 +18,34 @@
                 <div class="logo">DEMO</div>
                 <h2>Create Your Account</h2>
                 <p>Start your journey with us by setting up your account now!</p>
-                <form class="signup-form">
+                <!-- Định nghĩa method POST và action -->
+                <form class="signup-form" method="POST" action="{{ url_for('auth.signup') }}">
                     <!-- Username Field -->
                     <div class="form-group">
-                        <input type="text" placeholder="Username" required>
+                        <input type="text" name="username" placeholder="Username" required>
                     </div>
                     <!-- Gender Selection -->
                     <div class="form-group">
                         <select name="gender" class="gender-select" required>
                             <option value="" disabled selected>Select Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                            <option value="other">Other</option>
+                            <option value="Male">Male</option>
+                            <option value="Memale">Female</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>
                     <!-- Email and Phone -->
                     <div class="form-group">
-                        <input type="email" placeholder="Email" required>
+                        <input type="email" name="email" placeholder="Email" required>
                     </div>
                     <div class="form-group">
-                        <input type="tel" placeholder="Phone Number" required>
+                        <input type="tel" name="phonenumber" placeholder="Phone Number" required>
                     </div>
                     <!-- Password Fields -->
                     <div class="form-group">
-                        <input type="password" placeholder="Password" required>
+                        <input type="password" name="password" placeholder="Password" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder="Confirm Password" required>
+                        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
                     </div>
                     <!-- Terms and Policies -->
                     <div class="form-group checkbox-group">
