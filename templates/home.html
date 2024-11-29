@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+
+  <title>The Art of Hiring</title>
+</head>
+
+<body>
+  <header class="header">
+    <button class="logout-btn" onclick="window.location.href='/logout'">LOG OUT</button>
+  </header>
+  <main class="main-content">
+    <div class="text-container">
+      <h1>The Art of Hiring</h1>
+      <p>
+        Do you need an artist to breathe art into your product, marketing campaign, or creative project? Here's the
+        super easy platform to find the perfect illustrator, 2D or 3D artist. Connect and make it beautiful!
+      </p>
+      <div class="buttons">
+        <button class="btn btn-primary">HIRE ARTIST</button>
+        <button class="btn btn-secondary">HOW IT WORKS</button>
+      </div>
+    </div>
+    <div class="image-container">
+      <img src="Image/art.jpg" alt="Abstract Art">
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="social-links">
+      <a href="#"><img src="Image/facebook.svg" alt="Facebook"></a>
+      <a href="#"><img src="Image/twitter-x.svg" alt="Twitter"></a>
+      <a href="#"><img src="Image/youtube.svg" alt="YouTube"></a>
+      <a href="#"><img src="Image/instagram.svg" alt="Instagram"></a>
+    </div>
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,155 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    display: flex;
+    max-width: 1000px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .login-form {
+    padding: 40px;
+    width: 50%;
+  }
+  
+  .logo h1 {
+    font-size: 24px;
+    color: #6c63ff;
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    margin-bottom: 20px;
+    color: #777;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none; 
+  }
+  
+  .password-field {
+    position: relative; 
+    width: 100%; 
+  }
+  
+  .password-field input {
+    width: 100%; 
+    padding-right: 40px; 
+  }
+  
+  .password-field .toggle-password {
+    position: absolute; 
+    right: 10px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    cursor: pointer; 
+    width: 20px; 
+    height: 20px;
+  }
+  
+  .options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .options .forgot-password {
+    color: #ff4b5c;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .options label {
+    display: inline-flex; 
+    align-items: center; 
+    font-size: 14px; 
+    color: #333; 
+    cursor: pointer; 
+}
+
+.options input[type="checkbox"] {
+    margin: 0 5px 0 0; 
+    width: 16px; 
+    height: 16px;
+}
+  
+  .login-btn {
+    width: 100%;
+    background: #6c63ff;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login-btn:hover {
+    background: #5548c8;
+  }
+  
+  .signup-link {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .signup-link a {
+    color: #6c63ff;
+    text-decoration: none;
+  }
+  
+  .signup-link a:hover {
+    text-decoration: underline;
+  }
+  
+  .illustration {
+    background: #f9f9f9;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+  
+  .illustration img {
+    max-width: 100%;
+    height: auto;
+  }
+  
