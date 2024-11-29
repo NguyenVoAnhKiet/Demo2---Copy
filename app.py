@@ -1,6 +1,6 @@
 from flask import Flask, render_template, redirect, url_for
 from auth import auth
-from models import db
+from auth.models import db
 import os
 
 app = Flask(__name__)
@@ -29,5 +29,5 @@ def home():
     return render_template("home.html")
 
 
-if __name__ == "__main__":# Khởi tạo cơ sở dữ liệu nếu cần
+if __name__ == "__main__":  # Khởi tạo cơ sở dữ liệu nếu cần
     app.run(debug=True)
