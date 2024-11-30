@@ -54,6 +54,7 @@ def signup():
         username = request.form["username"]
         email = request.form["email"]
         password = request.form["password"]
+        confirm_password = request.form["confirm_password"]
         phonenumber = request.form["phonenumber"]
         gender = request.form["gender"].capitalize()
 
@@ -64,16 +65,20 @@ def signup():
                 "Password must be 8-40 characters long, include at least one uppercase letter and one special character.",
                 "danger",
             )
-        elif User.query.filter_by(username=username).first():
-            flash("Username already exists.", "danger")
-        elif User.query.filter_by(email=email).first():
-            flash("Email already exists.", "danger")
+        elif password != confirm_password:
+            flash("Passwords do not match.", "danger")
         # Kiểm tra số điện thoại: chỉ nhận số và đúng 10 ký tự
         elif not phonenumber.isdigit() or len(phonenumber) != 10:
             flash(
                 "Phone number must be 10 digits long and contain only numbers.",
                 "danger",
             )
+        elif User.query.filter_by(username=username).first():
+            flash("Username already exists.", "danger")
+        elif User.query.filter_by(email=email).first():
+            flash("Email already exists.", "danger")
+        elif User.query.filter_by(phonenumber=phonenumber).first():
+            flash("Phone number already exists.", "danger")
         else:
             # Băm mật khẩu trước khi lưu
             hashed_password = hash_password(password)

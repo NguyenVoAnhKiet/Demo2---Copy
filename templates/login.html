@@ -42,7 +42,8 @@
           <label for="password">Password</label>
           <div class="password-field">
             <input type="password" id="password" name="password" placeholder="********" autocomplete=off required>
-            <img src="Image/eye-slash-fill.svg" alt="Toggle password visibility" class="toggle-password">
+            <img src="{{ url_for('static', filename='images/eye-slash-fill.svg') }}" alt="Toggle password visibility"
+              class="toggle-password">
           </div>
         </div>
         <div class="options">
@@ -58,7 +59,7 @@
       </p>
     </div>
     <div class="illustration">
-      <img src="website/Image/login.jpg" alt="Secure login illustration">
+      <img src="{{ url_for('static', filename='images/login.jpg') }}" alt="Secure login illustration">
     </div>
   </div>
 </body>

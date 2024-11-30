@@ -26,15 +26,15 @@
       </div>
     </div>
     <div class="image-container">
-      <img src="Image/art.jpg" alt="Abstract Art">
+      <img src="{{ url_for('static', filename='images/art.jpg') }}" alt="Abstract Art">
     </div>
   </main>
   <footer class="footer">
     <div class="social-links">
-      <a href="#"><img src="Image/facebook.svg" alt="Facebook"></a>
-      <a href="#"><img src="Image/twitter-x.svg" alt="Twitter"></a>
-      <a href="#"><img src="Image/youtube.svg" alt="YouTube"></a>
-      <a href="#"><img src="Image/instagram.svg" alt="Instagram"></a>
+      <a href="#"><img src="{{ url_for('static', filename='images/facebook.svg') }}" alt="Facebook"></a>
+      <a href="#"><img src="{{ url_for('static', filename='images/twitter-x.svg') }}" alt="Twitter"></a>
+      <a href="#"><img src="{{ url_for('static', filename='images/youtube.svg') }}" alt="YouTube"></a>
+      <a href="#"><img src="{{ url_for('static', filename='images/instagram.svg') }}" alt="Instagram"></a>
     </div>
   </footer>
 </body>
