@@ -40,6 +40,9 @@ def login():
             flash("Login successful!", "success")
             session["user_id"] = user.user_id
             session["username"] = user.username
+            # Assume a successful authentication
+            session["logged_in"] = True
+            session["user"] = username
             return redirect(url_for("home"))
         else:
             flash(
